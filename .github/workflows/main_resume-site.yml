@@ -31,9 +31,14 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd .next/standalone
-          zip -r ../../release.zip .
-          cd ../..
+          # build the archive in project root so paths stay correct
+          zip -qr release.zip \
+            .next/standalone/* \
+            .next/static \
+            package.json \
+            package-lock.json \
+            next.config.js \
+            public
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -54,14 +59,12 @@ jobs:
         with:
           name: node-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
-      - name: 'Deploy to Azure Web App'
+      - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'resume-site'
           slot-name: 'Production'
-          package: .
+          package: release.zip          # send the zip directly
+          clean: true                   # avoid OneDeploy 409 conflicts
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E489F05E891C4BE697A7302A97642CE2 }}
