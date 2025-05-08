@@ -377,12 +377,14 @@ export default function ResumePage() {
             </tbody>
           </table>
         </div>
-        <h3 className="text-md font-semibold text-gray-700 mt-2">主要論文</h3>
+        <h3 className="text-md font-semibold text-gray-700 mt-2">主要論文・研究テーマ (学位論文)</h3>
         <ul className="list-disc list-inside ml-4 text-sm space-y-1 text-gray-600">
           <li>
-            Fundamental study on vibration monitoring system for wind turbine blades.
+            修士論文: Fundamental study on vibration monitoring system for wind turbine blades.
           </li>
-          <li>Gas flow characteristic in Nano-channel.</li>
+          <li>
+            学士論文: Gas flow characteristic in Nano-channel.
+          </li>
         </ul>
       </section>
 
