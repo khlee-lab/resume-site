@@ -394,7 +394,7 @@ export default function ResumePage() {
         </h2>
         <ul className="list-disc list-inside ml-4 text-sm space-y-1 text-gray-700">
           <li>
-            Lee, K. et al., "Feasibility study on a strain-based deflection monitoring system for wind turbine blades,"{" "}
+            Lee, K. et al., &quot;Feasibility study on a strain-based deflection monitoring system for wind turbine blades,&quot;{" "}
             <em>Mechanical Systems & Signal Processing</em>, 2017.
           </li>
         </ul>
