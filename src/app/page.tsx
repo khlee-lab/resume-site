@@ -1,3 +1,12 @@
+// Note: For "next: not found" error on Azure, check:
+// - 'next' is in package.json dependencies.
+// - 'build' and 'start' scripts in package.json are appropriate.
+// - If using `output: 'standalone'` in next.config.ts, ensure Azure's startup command is `node .next/standalone/server.js` (or similar).
+//   If Azure uses `npx next start`, `output: 'standalone'` might be incompatible. Consider removing it from next.config.ts.
+// - Azure deployment logs for errors during `npm install` or `node_modules` setup.
+//   The logs show malformed shell commands (e.g., `rm -fr ` with no argument) in the Oryx startup script,
+//   which could corrupt `node_modules` leading to "next: not found". This may be an Azure/Oryx platform issue.
+// - Node.js version compatibility on App Service.
 import Image from "next/image";
 
 export default function ResumePage() {
