@@ -7,7 +7,6 @@
 //   The logs show malformed shell commands (e.g., `rm -fr ` with no argument) in the Oryx startup script,
 //   which could corrupt `node_modules` leading to "next: not found". This may be an Azure/Oryx platform issue.
 // - Node.js version compatibility on App Service.
-import Image from "next/image";
 
 export default function ResumePage() {
   return (
