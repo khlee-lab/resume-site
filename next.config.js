@@ -1,8 +1,6 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   /* config options here */
-  // output: 'standalone', // Commented out: May conflict with Azure's 'npx next start' if not configured for standalone.
+  output: 'standalone', // Ensures compatibility with Azure's 'npx next start'
 };
 
 export default nextConfig;
